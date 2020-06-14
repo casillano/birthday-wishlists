@@ -27,7 +27,6 @@ public class TestDbServlet extends HttpServlet {
 		try {
 			PrintWriter out = response.getWriter();
 			out.println("Connection to databse: " + url);
-			Class.forName(driver);
 			Connection conn = DriverManager.getConnection(url, user, pass);
 			out.println("Connection successful");
 			conn.close();
