@@ -48,10 +48,10 @@ public class FriendDAO implements DAOInterface {
 		Session session = sessionFactory.getCurrentSession();
 		Query<Friend> query = null;
 		if (search != null && search.trim().length() > 0) {
-			query= session.createQuery("from Friend where lower(firstName) like :name or lower(lastName) like :name", Friend.class);
+			query= session.createQuery("from Friend where lower(name) like :name", Friend.class);
 			query.setParameter("name", "%" + search.toLowerCase() + "%");
 		} else {
-			query = session.createQuery("from Customer", Friend.class);
+			query = session.createQuery("from Friend", Friend.class);
 		}
 		
 		List<Friend> customers = query.getResultList();
