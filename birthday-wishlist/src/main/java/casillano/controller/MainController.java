@@ -60,6 +60,6 @@ public class MainController {
 	@GetMapping("deleteFriend")
 	public String deleteFriend(@RequestParam("friendId") int id) {
 		friendService.deleteFriend(id);
-		return "redirect:/friend/showAll";
+		return "redirect:/friends/showAll";
 	}
 }

@@ -41,11 +41,11 @@
 				<c:forEach var="friend" items="${friends}">
 				
 					<c:url var="updateLink" value="/friends/showUpdateForm">
-						<c:param name="customerId" value="${friend.id}" />
+						<c:param name="friendId" value="${friend.id}" />
 					</c:url>
 					
 					<c:url var="deleteLink" value="/friends/deleteFriend">
-						<c:param name="customerId" value="${friend.id}" />
+						<c:param name="friendId" value="${friend.id}" />
 					</c:url>
 					
 					<tr>

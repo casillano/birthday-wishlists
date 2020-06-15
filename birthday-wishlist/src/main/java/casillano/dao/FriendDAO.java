@@ -25,7 +25,8 @@ public class FriendDAO implements DAOInterface {
 	@Override
 	public void deleteFriend(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		session.delete(id);
+		Friend friend = session.get(Friend.class, id);
+		session.delete(friend);
 	}
 
 	@Override
