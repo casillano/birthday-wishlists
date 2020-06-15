@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="person_birthday")
+@Table(name="friend")
 public class Friend {
 
 	@Id
@@ -19,7 +19,7 @@ public class Friend {
 	private int id;
 	
 	@Column(name="name")
-	private int name;
+	private String name;
 	
 	@Column(name="birthday")
 	private Date birthday;
@@ -27,11 +27,11 @@ public class Friend {
 	@Column(name="wishlistId")
 	private String wishlistId;
 
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -55,6 +55,12 @@ public class Friend {
 	public String toString() {
 		return "Friend [id=" + id + ", name=" + name + ", birthday=" + birthday + ", wishlistId=" + wishlistId + "]";
 	}
+
+	public int getId() {
+		return id;
+	}
+	
+	
 	
 	
 }

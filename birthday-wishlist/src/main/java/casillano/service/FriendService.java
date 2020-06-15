@@ -1,5 +1,7 @@
 package casillano.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,8 +28,8 @@ public class FriendService implements ServiceInterface {
 
 	@Override
 	@Transactional
-	public void deleteFriend(Friend friend) {
-		DAO.deleteFriend(friend);
+	public void deleteFriend(int id) {
+		DAO.deleteFriend(id);
 
 	}
 
@@ -35,6 +37,18 @@ public class FriendService implements ServiceInterface {
 	@Transactional
 	public Friend getFriend(int id) {
 		return DAO.getFriend(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Friend> getFriends() {
+		return DAO.getFriends();
+	}
+
+	@Override
+	@Transactional
+	public List<Friend> searchFriends(String search) {
+		return DAO.searchFriends(search);
 	}
 
 }
