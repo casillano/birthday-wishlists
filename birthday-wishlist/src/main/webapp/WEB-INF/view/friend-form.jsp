@@ -7,10 +7,7 @@
 	<meta charset="ISO-8859-1">
 	<title>Save Customer</title>
 	<link type="text/css" rel="stylesheet"
-		href="${pageContext.request.contextPath}/resources/css/add-customer-style.css"
-	/>
-	<link type="text/css" rel="stylesheet"
-		href="${pageContext.request.contextPath}/resources/css/style.css"
+		href="${pageContext.request.contextPath}/resources/css/main.css"
 	/>
 </head>
 <body>
@@ -20,33 +17,35 @@
 		</div>
 	</div>
 	<div id="container">
-		<h3>Save Friend</h3>
+		<h3 class="save-friend">Save Friend</h3>
 		<form:form action="saveFriend" modelAttribute="friend" method="POST">
 			
 			<form:hidden path="id" />
-			<table>
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110 add-form">
+			<table data-vertable="ver1 add-form">
 				<tbody>
-					<tr>
-						<td><label>Name:</label></td>
-						<td><form:input path="name" /></td>
+					<tr class="row100">
+						<td class="column100 column1"><label>Name:</label></td>
+						<td class="column100 column2"><form:input path="name" /></td>
 					</tr>
-					<tr>
-						<td><label>Birthday (YYYY-MM-DD):</label></td>
-						<td><form:input path="birthday" /></td>
+					<tr class="row100">
+						<td class="column100 column1"><label >Birthday (YYYY-MM-DD):</label></td>
+						<td class="column100 column2"><form:input path="birthday" /></td>
 					</tr>
-					<tr>
-						<td><label>Wishlist ID:</label></td>
-						<td><form:input path="wishlistId" /></td>
+					<tr class="row100">
+						<td class="column100 column1"><label>Wishlist ID:</label></td>
+						<td class="column100 column2"><form:input path="wishlistId" /></td>
 					</tr>
-					<tr>
-						<td><input type="submit" value="Save" class="save" /></td>
+					<tr class="row100">
+						<td class="column100 column1"><input type="submit" value="Save"  class="save"/></td>
+						<td class="column100 column2"><p><a href="${pageContext.request.contextPath}/friends/showAll">Back to list</a></p></td>
 					</tr>
 				</tbody>
 			</table>
+			</div>
+			</div>
 		</form:form>
-		
-		<div style="clear; both"></div>
-		<p><a href="${pageContext.request.contextPath}/friends/showAll">Back to list</a></p>
 		
 	</div>
 </body>

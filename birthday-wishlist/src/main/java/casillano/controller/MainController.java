@@ -31,7 +31,7 @@ public class MainController {
 		List<Friend> friends = friendService.getFriends();
 		model.addAttribute("friends", friends);
 		model.addAttribute("searchText", null);
-		return "show-friends";
+		return "show-friends2";
 	}
 	
 	@GetMapping("/search")
@@ -39,7 +39,7 @@ public class MainController {
 		List<Friend> friends = friendService.searchFriends(search);
 		model.addAttribute("friends", friends);
 		model.addAttribute("searchText", search);
-		return "show-friends";
+		return "show-friends2";
 	}
 	
 	@PostMapping("/saveFriend")
