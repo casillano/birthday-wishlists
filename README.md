@@ -4,7 +4,7 @@ would make such a better gift (*hint hint).
 
 # How to Use
 
-This currently only works on the Canadian Amazon site. The person's Amazon wishlist ID can be found in the url:
+This currently only works on the Canadian and US Amazon sites. The person's Amazon wishlist ID can be found in the url:
 
 ```
 https://www.amazon.ca/hz/wishlist/ls/1H4NZDNEB37IN
