@@ -27,8 +27,19 @@ public class Friend {
 	@Column(name="birthday")
 	private Date birthday;
 	
-	@Column(name="wishlistId")
+	@Column(name="wishlist_id")
 	private String wishlistId;
+	
+	@Column(name="amazon_domain")
+	private String amazonDomain;
+
+	public String getAmazonDomain() {
+		return amazonDomain;
+	}
+
+	public void setAmazonDomain(String amazonDomain) {
+		this.amazonDomain = amazonDomain;
+	}
 
 	public String getName() {
 		return name;
@@ -61,10 +72,6 @@ public class Friend {
 	}
 
 	public Date getBirthday() {
-		System.out.println("Current time");
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		System.out.println(dtf.format(now));
 		return this.birthday;
 	}
 

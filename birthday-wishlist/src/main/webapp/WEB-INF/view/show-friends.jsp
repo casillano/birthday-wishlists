@@ -52,7 +52,7 @@
 						<td> ${friend.name}</td>
 						<td> ${friend.birthday}</td>
 						<td>
-							<button onclick="window.open('https://www.amazon.ca/hz/wishlist/ls/${friend.wishlistId}', '_blank')">View Wishlist</button>
+							<button onclick="window.open('https://www.amazon.${friend.amazonDomain}/hz/wishlist/ls/${friend.wishlistId}', '_blank')">View Wishlist ${friend.amazonDomain}</button>
 						</td>
 						<td> 
 							<a href="${updateLink}">Update</a>

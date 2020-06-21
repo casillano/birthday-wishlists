@@ -38,6 +38,15 @@
 						<td class="column100 column2"><form:input path="wishlistId" /></td>
 					</tr>
 					<tr class="row100">
+					<td class="column100 column1"><label>Amazon Domain:</label></td>
+					<td class="column100 column2">
+						<form:select path="amazonDomain">
+							<form:option value="ca" label=".ca"/>
+							<form:option value="com" label=".com"/>
+						</form:select>
+						</td>
+					</tr>
+					<tr class="row100">
 						<td class="column100 column1"><input type="submit" value="Save"  class="save"/></td>
 						<td class="column100 column2"><p><a href="${pageContext.request.contextPath}/friends/showAll">Back to list</a></p></td>
 					</tr>

@@ -57,7 +57,7 @@
 									<td class="column100 column2" data-column="column2"> ${friend.birthday}</td>
 									<td class="column100 column3" data-column="column3">
 										<!--  <button onclick="window.open('https://www.amazon.ca/hz/wishlist/ls/${friend.wishlistId}', '_blank')">View Wishlist</button> -->
-										<a href="https://www.amazon.ca/hz/wishlist/ls/${friend.wishlistId}" target="_blank">View Wishlist</a>
+										<a href="https://www.amazon.${friend.amazonDomain}/hz/wishlist/ls/${friend.wishlistId}" target="_blank">View Wishlist</a>
 										
 									</td>
 									<td class="column100 column4" data-column="column4"> 
