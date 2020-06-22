@@ -1,13 +1,17 @@
 package casillano.controller;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -43,9 +47,16 @@ public class MainController {
 	}
 	
 	@PostMapping("/saveFriend")
-	public String saveFriend(@ModelAttribute("friend") Friend friend) {
-		friendService.saveOrUpdateFriend(friend);
-		return "redirect:/friends/showAll";
+	public String saveFriend(
+			@Valid @ModelAttribute("friend") Friend friend,
+			BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "friend-form";
+		} else {
+			System.out.println("no error found");
+			friendService.saveOrUpdateFriend(friend);
+			return "redirect:/friends/showAll";
+		}
 	}
 	
 	@GetMapping("/showAddForm")
@@ -68,9 +79,13 @@ public class MainController {
 		return "redirect:/friends/showAll";
 	}
 	
+	
 	@InitBinder     
 	public void initBinder(WebDataBinder binder){
 	     binder.registerCustomEditor(Date.class,
-	    		 new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true, 10));   
+	    		 new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true, 10)); 
+	     StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+			
+			binder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
 }

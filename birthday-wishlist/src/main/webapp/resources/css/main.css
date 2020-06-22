@@ -24,6 +24,7 @@ input {
 }
 
 
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -37,7 +38,6 @@ input {
   font-family: Montserrat-Medium;
   src: url('../fonts/montserrat/Montserrat-Medium.ttf'); 
 }
-
 
 #wrapper {width: 100%; margin-top: 0px; }
 #header {width: 100%; background: #36304A; margin-top: 0px; padding:15px 15px 15px 15px; margin-bottom:30px;}
@@ -221,7 +221,7 @@ th, td {
 [ Ver1 ]*/
 .table100.ver1 td {
   font-family: Montserrat-Regular;
-  font-size: 14px;
+  font-size: 14px; 
   color: #808080;
   line-height: 1.4;
 }

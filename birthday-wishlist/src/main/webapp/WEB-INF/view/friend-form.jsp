@@ -9,6 +9,8 @@
 	<link type="text/css" rel="stylesheet"
 		href="${pageContext.request.contextPath}/resources/css/main.css"
 	/>
+	
+	<style>.error {color: red}</style>
 </head>
 <body>
 	<div id="wrapper">
@@ -27,15 +29,21 @@
 				<tbody>
 					<tr class="row100">
 						<td class="column100 column1"><label>Name:</label></td>
-						<td class="column100 column2"><form:input path="name" /></td>
+						<td class="column100 column2"><form:input path="name" />
+						<form:errors path="name" cssClass="error"/>
+						</td>
 					</tr>
 					<tr class="row100">
 						<td class="column100 column1"><label >Birthday (YYYY-MM-DD):</label></td>
-						<td class="column100 column2"><form:input path="birthday" /></td>
+						<td class="column100 column2"><form:input path="birthday" />
+						<form:errors path="birthday" cssClass="error"/>
+						</td>
 					</tr>
 					<tr class="row100">
 						<td class="column100 column1"><label>Wishlist ID:</label></td>
-						<td class="column100 column2"><form:input path="wishlistId" /></td>
+						<td class="column100 column2"><form:input path="wishlistId" />
+						<form:errors path="wishlistId" cssClass="error" />
+						</td>
 					</tr>
 					<tr class="row100">
 					<td class="column100 column1"><label>Amazon Domain:</label></td>

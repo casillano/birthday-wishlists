@@ -1,7 +1,5 @@
 package casillano.entity;
 import java.sql.Date;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 
 @Entity
@@ -22,15 +21,20 @@ public class Friend {
 	private int id;
 	
 	@Column(name="name")
+	@NotNull(message="is required")
 	private String name;
 	
+	@NotNull(message="is required")
 	@Column(name="birthday")
 	private Date birthday;
 	
+	@NotNull(message="is required")
+	@Pattern(regexp="^[A-Z0-9]{13}", message="invalid wishlist id")
 	@Column(name="wishlist_id")
 	private String wishlistId;
 	
 	@Column(name="amazon_domain")
+	@NotNull(message="is required")
 	private String amazonDomain;
 
 	public String getAmazonDomain() {
@@ -60,7 +64,7 @@ public class Friend {
 
 	@Override
 	public String toString() {
-		return "Friend [id=" + id + ", name=" + name + ", birthday=" + birthday + ", wishlistId=" + wishlistId + "]";
+		return "Friend [id=" + id + ", name=" + name + ", birthday=" + birthday + ", wishlistId=" + wishlistId + ", amazonDomain=" + amazonDomain + "]";
 	}
 
 	public int getId() {
