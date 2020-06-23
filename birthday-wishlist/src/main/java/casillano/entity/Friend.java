@@ -36,6 +36,21 @@ public class Friend {
 	@Column(name="amazon_domain")
 	@NotNull(message="is required")
 	private String amazonDomain;
+	
+	
+	public Friend() {}
+	
+	
+	public Friend(@NotNull(message = "is required") String name, @NotNull(message = "is required") Date birthday,
+			@NotNull(message = "is required") @Pattern(regexp = "^[A-Z0-9]{13}", message = "invalid wishlist id") String wishlistId,
+			@NotNull(message = "is required") String amazonDomain) {
+		super();
+		this.name = name;
+		this.birthday = birthday;
+		this.wishlistId = wishlistId;
+		this.amazonDomain = amazonDomain;
+	}
+
 
 	public String getAmazonDomain() {
 		return amazonDomain;
