@@ -1,7 +1,6 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import java.sql.Date;
 import static org.junit.Assert.assertFalse;
 
 import java.util.Set;
@@ -13,7 +12,6 @@ import javax.validation.ValidatorFactory;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import casillano.entity.Friend;
 
 public class FriendEntityTest {
