@@ -19,6 +19,10 @@ public class FriendService implements ServiceInterface {
 	@Autowired
 	private DAOInterface DAO;
 
+	// the methods below wrap the DAO functions using
+	// @Transactional so that session transactions are
+	// handled by Spring. 
+	
 	@Override
 	@Transactional
 	public void saveOrUpdateFriend(Friend friend) {

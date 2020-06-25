@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import casillano.entity.Friend;
 
+// The data access object that handles CRUD functionality 
 @Repository
 public class FriendDAO implements DAOInterface {
 	
@@ -35,7 +36,8 @@ public class FriendDAO implements DAOInterface {
 		Friend friend = session.get(Friend.class, id);
 		return friend;
 	}
-
+	
+	// return all of the friends in the database, ordered by birthday
 	@Override
 	public List<Friend> getFriends() {
 		Session session = sessionFactory.getCurrentSession();
@@ -48,7 +50,12 @@ public class FriendDAO implements DAOInterface {
 	public List<Friend> searchFriends(String search) {
 		Session session = sessionFactory.getCurrentSession();
 		Query<Friend> query = null;
+		
+		// check if search is contained in a friend's name, and return all
+		// friends that match
+		
 		if (search != null && search.trim().length() > 0) {
+			// set all characters to lowercase to make searching case-insensitive
 			query= session.createQuery("from Friend where lower(name) like :name", Friend.class);
 			query.setParameter("name", "%" + search.toLowerCase() + "%");
 		} else {

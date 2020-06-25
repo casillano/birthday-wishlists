@@ -6,6 +6,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Save Customer</title>
+	<!-- css was taken from online -->
 	<link type="text/css" rel="stylesheet"
 		href="${pageContext.request.contextPath}/resources/css/main.css"
 	/>
@@ -21,15 +22,19 @@
 	<div id="container">
 		<h3 class="save-friend">Save Friend</h3>
 		<form:form action="saveFriend" modelAttribute="friend" method="POST">
-			
+			<!-- hidden id form tag so that the id of the person persists,
+				 allows person to be updated instead of creating another person -->
 			<form:hidden path="id" />
+			
 			<div class="wrap-table100">
 				<div class="table100 ver1 m-b-110 add-form">
 			<table data-vertable="ver1 add-form">
 				<tbody>
 					<tr class="row100">
+						<!-- form tags are used to set the attributes of the Friend entity -->
 						<td class="column100 column1"><label>Name:</label></td>
 						<td class="column100 column2"><form:input path="name" />
+						<!-- error tags show any validation errors of the given attribute -->
 						<form:errors path="name" cssClass="error"/>
 						</td>
 					</tr>

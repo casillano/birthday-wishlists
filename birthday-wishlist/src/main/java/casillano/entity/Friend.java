@@ -10,15 +10,20 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+// The friend entity used for ORM.
 
 @Entity
 @Table(name="friend")
 public class Friend {
+	
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
+	
+	// all fields below are set using a form, so there
+	// must be checks to ensure the input is not null
 	
 	@Column(name="name")
 	@NotNull(message="is required")
@@ -28,6 +33,8 @@ public class Friend {
 	@Column(name="birthday")
 	private Date birthday;
 	
+	// add a regex pattern to ensure the input matches the format
+	// of a valid wishlist id
 	@NotNull(message="is required")
 	@Pattern(regexp="^[A-Z0-9]{13}", message="invalid wishlist id")
 	@Column(name="wishlist_id")
@@ -51,7 +58,8 @@ public class Friend {
 		this.amazonDomain = amazonDomain;
 	}
 
-
+	// getters and setters, as well as a toString() 
+	
 	public String getAmazonDomain() {
 		return amazonDomain;
 	}

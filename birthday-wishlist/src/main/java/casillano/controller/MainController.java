@@ -30,13 +30,20 @@ public class MainController {
 	@Autowired
 	private ServiceInterface friendService;
 	
+	// main page that shows the database entries
+	
 	@GetMapping("/showAll")
 	public String showAllFriends(Model model) {
+		
+		// get all entries from the database
 		List<Friend> friends = friendService.getFriends();
 		model.addAttribute("friends", friends);
 		model.addAttribute("searchText", null);
 		return "show-friends2";
 	}
+	
+	// take the text from the search bar and use it to search
+	// through all of the friends
 	
 	@GetMapping("/search")
 	public String searchForFriends(@RequestParam("searchName") String search, Model model) {
@@ -46,10 +53,14 @@ public class MainController {
 		return "show-friends2";
 	}
 	
+	// used for saving or updating a friend
+	
 	@PostMapping("/saveFriend")
 	public String saveFriend(
 			@Valid @ModelAttribute("friend") Friend friend,
 			BindingResult bindingResult) {
+		
+		// check if the form entries are valid
 		if (bindingResult.hasErrors()) {
 			return "friend-form";
 		} else {
@@ -61,6 +72,8 @@ public class MainController {
 	
 	@GetMapping("/showAddForm")
 	public String showAddForm(Model model) {
+		// add friend object to model so that it can be populated
+		// by the form
 		Friend friend = new Friend();
 		model.addAttribute("friend", friend);
 		return "friend-form";
@@ -84,6 +97,8 @@ public class MainController {
 	public void initBinder(WebDataBinder binder){
 	     binder.registerCustomEditor(Date.class,
 	    		 new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true, 10)); 
+	     
+	     // trims strings so that all-whitespace strings are treated as null
 	     StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 			
 			binder.registerCustomEditor(String.class, stringTrimmerEditor);

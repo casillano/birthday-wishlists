@@ -17,7 +17,7 @@
 			<h2>Birthday (or special occasion) Wishlists</h2>
 		</div>
 	</div>
-	
+	<!-- button redirects to the form which allows users to add new friends -->
 	<input type="button" value="Add Friend"
 				onclick="window.location.href='showAddForm'; return false;"
 				class="add-button"
@@ -42,12 +42,16 @@
 							</tr>
 						</thead>
 						<tbody>
+						<!-- loop through all of the friends and get the data from each of them, and 
+							  show it on a table row -->
 							<c:forEach var="friend" items="${friends}">
-				
+								
+								<!-- redirect to the update form and pass in the friend's id as a url parameter -->
 								<c:url var="updateLink" value="/friends/showUpdateForm">
 									<c:param name="friendId" value="${friend.id}" />
 								</c:url>
 								
+								<!-- delete the friend using its id, which is passed as a url parameter -->
 								<c:url var="deleteLink" value="/friends/deleteFriend">
 									<c:param name="friendId" value="${friend.id}" />
 								</c:url>
@@ -56,7 +60,7 @@
 									<td class="column100 column1" data-column="column1"> ${friend.name}</td>
 									<td class="column100 column2" data-column="column2"> ${friend.birthday}</td>
 									<td class="column100 column3" data-column="column3">
-										<!--  <button onclick="window.open('https://www.amazon.ca/hz/wishlist/ls/${friend.wishlistId}', '_blank')">View Wishlist</button> -->
+										<!--  create an amazon link using the person's wishlist id -->
 										<a href="https://www.amazon.${friend.amazonDomain}/hz/wishlist/ls/${friend.wishlistId}" target="_blank">View Wishlist</a>
 										
 									</td>
