@@ -14,4 +14,4 @@ https://www.amazon.ca/hz/wishlist/ls/1H4NZDNEB37IN
 In this wishlist url (which links to my personal wishlist), the wishlist ID corresponds to the 13 digits and letters at the 
 end of the url. In this case, it's `1H4NZDNEB37IN`
 
-The app communicates with a MySQL database. To set up your own database with this project, go to `src/main/webapp/WEB-INF/crud-servlet.xml`, and change the information on lines 39-41.
+The app communicates with a MySQL database. To set up your own database with this project, go to `src/main/webapp/WEB-INF/crud-servlet.xml`, and change the information on lines 39-41. The sql code used to create the schema for the database can be found under `sql\`.
