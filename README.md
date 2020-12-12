@@ -1,6 +1,6 @@
 # Amazon Wishlist Database for Birthdays (and other special occasions)
-A useful web app to help you find the right gifts for your friends. Money is nice, but a JBL Flip 4 Waterprrof Portable Bluetooth Speaker
-would make such a better gift (*hint hint). 
+A useful web app to help you find the right gifts for your friends. Money is nice, but a JBL Flip 4 Waterproof Portable Bluetooth Speaker
+would make such a better gift ;) . 
 
 ![wishlist gif](wishlist.gif)
 
